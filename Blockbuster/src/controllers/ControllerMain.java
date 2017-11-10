@@ -14,6 +14,7 @@ public class ControllerMain {
     private final ViewMain view_main;
     private final ViewPeliculas view_peliculas;
     private final ViewClientes view_clientes;
+    private final ViewRentas view_rentas;
     private final ControllerClientes controller_clientes;
     private final ControllerPeliculas controller_peliculas;
     
@@ -23,6 +24,7 @@ public class ControllerMain {
         this.view_main = (ViewMain)views[0];
         this.view_peliculas = (ViewPeliculas)views[1];
         this.view_clientes = (ViewClientes)views[2];
+        this.view_rentas = (ViewRentas)views[3];
         this.controller_clientes = (ControllerClientes)controllers[0];
         this.controller_peliculas = (ControllerPeliculas)controllers[1];
         initView();
@@ -34,12 +36,14 @@ public class ControllerMain {
         view_main.setVisible(true);
         view_main.jmi_peliculas.addActionListener(e ->jmi_peliculasMouseClicked());
         view_main.jmi_clientes.addActionListener(e -> jmi_clientesMouseClicked());
+        view_main.jmi_rentas.addActionListener(e -> jmi_rentasMouseClicked());
     }
     
     public void jmi_peliculasMouseClicked(){
         view_main.setContentPane(view_peliculas);
         view_main.revalidate();
         view_main.repaint();
+        view_peliculas.requestFocusInWindow();
         controller_peliculas.Actualizar_Interfaz();
     }
     
@@ -47,6 +51,14 @@ public class ControllerMain {
         view_main.setContentPane(view_clientes);
         view_main.revalidate();
         view_main.repaint();
+        view_clientes.requestFocusInWindow();
         controller_clientes.Actualizar_Interfaz();
+    }
+    
+    public void jmi_rentasMouseClicked(){
+        view_main.setContentPane(view_rentas);
+        view_main.revalidate();
+        view_main.repaint();
+        view_rentas.requestFocusInWindow();
     }
 }

@@ -23,7 +23,7 @@ public class ModelMain {
     public void Connect(){
         try{
             Class.forName("org.postgresql.Driver");
-            sql_connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Blockbuster", "postgres", "");
+            sql_connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Blockbuster", "admin", "");
             sql_statement = sql_connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         }
         catch(ClassNotFoundException f){
@@ -52,6 +52,17 @@ public class ModelMain {
         }
         catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error al ejecutar actualización: " + e);
+        }
+    }
+    
+    public void Ejecutar_Sentencia(){
+        try{
+            Connect();
+            sql_statement.execute(sql);
+            sql_connection.close();
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "nel carnal" + e);
         }
     }
     

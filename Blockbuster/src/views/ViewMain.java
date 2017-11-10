@@ -32,6 +32,7 @@ public class ViewMain extends javax.swing.JFrame {
         jme_interfaz = new javax.swing.JMenu();
         jmi_peliculas = new javax.swing.JMenuItem();
         jmi_clientes = new javax.swing.JMenuItem();
+        jmi_rentas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1024, 600));
@@ -62,6 +63,10 @@ public class ViewMain extends javax.swing.JFrame {
         jmi_clientes.setFont(new java.awt.Font("PakType Naskh Basic", 1, 14)); // NOI18N
         jmi_clientes.setText("Clientes");
         jme_interfaz.add(jmi_clientes);
+
+        jmi_rentas.setFont(new java.awt.Font("PakType Naskh Basic", 1, 14)); // NOI18N
+        jmi_rentas.setText("Rentas");
+        jme_interfaz.add(jmi_rentas);
 
         jmb_menus.add(jme_interfaz);
 
@@ -121,6 +126,7 @@ public class ViewMain extends javax.swing.JFrame {
     public javax.swing.JMenu jme_interfaz;
     public javax.swing.JMenuItem jmi_clientes;
     public javax.swing.JMenuItem jmi_peliculas;
+    public javax.swing.JMenuItem jmi_rentas;
     public javax.swing.JPanel jpnl_fondo;
     // End of variables declaration//GEN-END:variables
 }
